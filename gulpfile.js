@@ -134,9 +134,13 @@ const publish = () => {
   })
 }
 
+exports['upload'] = async function () {
+  await uploadStatic()
+}
+
 exports['publish'] = async function () {
   // await uploadStatic()
-  // await publish()
+  await publish()
 }
 
 exports['clear'] = function () {
