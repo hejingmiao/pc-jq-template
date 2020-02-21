@@ -2,6 +2,7 @@
 node_modules/
 dist/
 .ftppass
+README-hz.md
 
 # local env files
 .env.local
