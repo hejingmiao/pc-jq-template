@@ -3,7 +3,7 @@ const fs = require('fs')
 const del = require('del')
 const path = require('path')
 const easeftp = require('easeftp/upload')
-const ftppass = JSON.parse(fs.readFileSync('.ftppass', 'utf-8'))
+const account = require('/Users/hejingmiao/code/openID')
 const iconv = require('iconv-lite')
 const agent = require('./config/agent')
 
@@ -55,8 +55,8 @@ function uploadStatic () {
 
   return easeftp.addFile(newFiles, {
     debug: true,
-    username: ftppass.username,
-    password: ftppass.password,
+    username: account.username,
+    password: account.password,
     path: `f2e/${pkg.channel}/${pkg.name}`,
     cwd: path.resolve('dist')
   }).then(res => {
@@ -102,7 +102,7 @@ function encodeStr(content, charset = 'GBK') {
  * @param {Function} callback
  */
 const updateTemplate = (modelid, content, callback) => {
-  const { url, params } = ftppass.cms.pc
+  const { url, params } = account.cms.pc
   const data = params + '&modelid=' + modelid + '&content=' + encodeStr(content)
   // console.log(url, data)
   return new Promise((resolve, reject) => {
@@ -114,7 +114,6 @@ const updateTemplate = (modelid, content, callback) => {
 }
 
 const publish = () => {
-  // `dist/static/`
   let files = fs.readdirSync(`dist/`)
   files.forEach(filepath => {
     if (HTML_REG.test(filepath)) {
@@ -136,8 +135,8 @@ const publish = () => {
 }
 
 exports['publish'] = async function () {
-  await uploadStatic()
-  await publish()
+  // await uploadStatic()
+  // await publish()
 }
 
 exports['clear'] = function () {

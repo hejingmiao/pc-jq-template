@@ -7,7 +7,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="format-detection" content="telephone=no,email=no">
-  <meta name="cms_id" content="0001test_pc_jq_template" />
+  <meta name="cms_id" content="0001" />
   <meta name="model_url" content="${modelUrl}" />
   <title>网易新闻</title>
   <script>
@@ -29,55 +29,7 @@
   <!--#include virtual="/special/ntes_common_model/site_subnav2019.html" -->
 
 	<div id="container" class="container">
-    #macro (getImglist)
-      #set($imgurl = '')
-      #if($one.get('imgsrc3gtype') == '1') ## 1单图
-          #if($one.get('imgsrc3g') != "")
-              #set($imgurl = $one.get('imgsrc3g'))
-          #else
-              #set($imgurl = [图片链接])
-          #end
-      #elseif($one.get('imgsrc3gtype') == '2') ## 2三图
-          #set($pics = $tools.split($one.get('imgsrc3g'),'||'))
-          #foreach ($pic in $pics)
-              #if($velocityCount == 1)
-                  #set($imgurl = $pic)
-              #end
-          #end
-      #elseif($one.get('imgsrc3gtype') == '3' || $one.get('imgsrc3gtype') == '4') ##3大图 或 4视频
-          #set($pics = $tools.split($one.get('imgsrc3g'),'||'))
-          #foreach ($pic in $pics)
-              #if($velocityCount == 2)
-                  #set($imgurl = $pic)
-              #end
-          #end
-      #else
-          #set($imgurl = [图片链接])
-      #end
-  #end
-
-    <div class="getList">
-      #set($list=$tag.getList("topicid=0025986V;listnum=2;titlelength=16;pointstart=60;pointend=150;split=1;"))
-      #if ($list)#foreach ($one in $list)
-      #getImglist()
-      <div>$imgurl</div>
-      <div>[摘要]</div>
-      #end#end
-    </div>
-    <div class="getRTTopPV">
-      #set ($list=$tag.getTopPVByHour("sports.163.com",1,22,0,2))
-      #if ($list)#foreach ($one in $list)
-      #set ($css="gray")
-      #if ($velocityCount<=3)
-      #set ($css="red")
-      #end
-      #if ($velocityCount > 3)
-      #end
-      #if($velocityCount < 11)
-      <div><p class="${css}"><span>$velocityCount</span><a href="[链接]">$tools.cutTitle([标题],24)</a></p><p class="cBlue">$one.get("score")</p></div>
-      #end
-      #end#end
-    </div>
+    <!-- TODO -->
 	</div>
   <!-- 底部导航条 -->
   <!--#include virtual="/special/ntes_common_model/site_foot2019.html" -->
