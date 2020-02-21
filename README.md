@@ -107,8 +107,6 @@ pc_jq_template
 * js使用[babel7.5](https://babeljs.io/)进行编译，按照package.json中的browserslist自动增加polyfill
 * eslint使用默认标准，[规则](https://eslint.org/docs/rules/)
 * 统计ID位于`package.json`的`projectId`字段
-* 已内置`@mf2e/js-bridge`，用于H5调用客户端方法，[项目](http://npm.hz.netease.com/package/@mf2e/js-bridge)，[文档](https://wp.m.163.com/163/html/newsclient/api/index.html#/)
-* 已内置`@newsapp-activity/newsapp-share`，`src/js/utils/share.js`对其进行封装
 * 已内置`jQuery`，版本`v3.4.1`index.html中引入js，webpack.externals进行排除）
 * npm run dev开启本地服务后，可以使用localhost:8080或{ip}:8080或dev.f2e.163.com:8080（需配置hosts）调试
 * 打包时静态资源默认添加hash，上传后进行缓存，无修改不再重复上传
