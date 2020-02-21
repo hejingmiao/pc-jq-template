@@ -3,6 +3,7 @@ node_modules/
 dist/
 .ftppass
 README-hz.md
+README-github.md
 
 # local env files
 .env.local
