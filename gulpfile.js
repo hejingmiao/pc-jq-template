@@ -139,7 +139,6 @@ exports['upload'] = async function () {
 }
 
 exports['publish'] = async function () {
-  // await uploadStatic()
   await publish()
 }
 
