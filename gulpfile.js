@@ -3,7 +3,7 @@ const fs = require('fs')
 const del = require('del')
 const path = require('path')
 const easeftp = require('easeftp/upload')
-const account = require('/Users/hejingmiao/code/openID')
+const account = require('/Users/xxx/code/openID')
 const iconv = require('iconv-lite')
 const agent = require('./config/agent')
 

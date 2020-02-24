@@ -8,7 +8,11 @@
 <!-- 频道导航头 -->
 <!--#include virtual="/special/sp/post_1603_header.html" -->
 ```
-
+### 其他配置
+```js
+// gulpfile.js
+const account = require('/Users/xxx/code/openID') // 配置路径
+```
 ### Project setup
 ```bash
 # 安装依赖
